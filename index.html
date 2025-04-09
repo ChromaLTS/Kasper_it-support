@@ -15,14 +15,42 @@
         #zsfeedbackFrame {
             height: 400px;
         } 
+        #genvej {
+            position: absolute;
+            color:blue;
+            text-decoration: underline;
+        }
+        #genvej:hover {
+            color: rgb(116, 116, 197);
+            cursor: pointer;
+        }
 
     </style>
+
+
 </head>
 <body>
+    <a id="genvej">Download genvej</a>
     <div class="content">
         <iframe id="zsfeedbackFrame" width="890" height="400" name="zsfeedbackFrame" scrolling="no" allowtransparency="false" frameborder="0" border="0" src="https://desk.zoho.eu/support/fbw?formType=AdvancedWebForm&fbwId=edbsnf278ab843858210ae8a8f9f4d9abdace5243ace5df9c38fcc49167c4a08f8832&xnQsjsdp=edbsnb6d78595adf88727b254b6b267e2e2d4&mode=showNewWidget&displayType=iframe"></iframe>    
     </div>
 </body>
+<script>
+    const download = () => {
+        alert("yoyoy")
+        const fileUrl = "https://raw.githubusercontent.com/chromalts/kasper_it-support/main/Kasper - It-support.url";
+            
+            // Create a temporary link element
+            const link = document.createElement("a");
+            link.href = fileUrl;
+            link.download = "myfile.pdf"; // Optional: sets the filename for the download
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+    }
+
+    document.getElementById("genvej").addEventListener("click", download);
+</script>
 </html>
 
 
